@@ -19,9 +19,15 @@ Eredivisie) to a top-tier league (e.g., Premier League)?**
 
 Since there’s no ready-made dataset for this specific question, we created our
 own by scraping from trusted sources.
-> ⚠️ **Note:** We are **excluding goalkeepers** from this research to keep the
-analysis more focused and because richer, more consistent data is available for
-outfield players (defenders, midfielders, forwards).
+
+> ⚠️ **Note:**  
+>
+> - We are **excluding goalkeepers** to keep the analysis focused and because
+more consistent data is available for outfield players (defenders, midfielders, forwards).
+> - We are also **excluding loaned players** after their transfer, since their
+playing time and role in the club are often unclear or temporary. This helps us
+focus on **full-time transfers** and get more reliable post-transfer performance
+metrics.
 
 ---
 
