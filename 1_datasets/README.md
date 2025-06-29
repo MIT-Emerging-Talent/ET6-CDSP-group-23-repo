@@ -19,6 +19,9 @@ Eredivisie) to a top-tier league (e.g., Premier League)?**
 
 Since there’s no ready-made dataset for this specific question, we created our
 own by scraping from trusted sources.
+> ⚠️ **Note:** We are **excluding goalkeepers** from this research to keep the
+analysis more focused and because richer, more consistent data is available for
+outfield players (defenders, midfielders, forwards).
 
 ---
 
@@ -67,12 +70,6 @@ success—but this narrows down the scouting pool and adds data-driven support t
 - All **raw datasets** are saved as `*.raw.*` to indicate they’re **untouched
 from source**.
 - Any **cleaned or processed versions** are saved separately with **descriptive names**.
-
-| Filename | Description | Format | Status |
-|----------|-------------|--------|--------|
-| [`transfers_2014_2023.raw.csv`](./transfers_2014_2023.raw.csv) | Raw transfer data scraped from Transfermarkt | `.csv` | ✅ Complete |
-| [`player_attributes_fotmob.raw.json`](./player_attributes_fotmob.raw.json) | Raw player attributes and ratings scraped from Fotmob | `.csv` | ✅ Complete |
-| [`processed_combined_data.csv`](./processed_combined_data.csv) | Cleaned, combined dataset ready for modeling | `.csv` | 🛠️ In Progress |
 
 ---
 
