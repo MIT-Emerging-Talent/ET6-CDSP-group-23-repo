@@ -1,5 +1,8 @@
 # Data Cleaning & Preparation Script 🧹✨
 
+This README provides a quick summary of the data Preparation script for the
+("Transfer_Dataset.raw.csv") dataset.
+
 The script [Transfer_Dataset_Data_Preparation.ipynb](Transfer_Dataset_Data_Preparation.ipynb)
 is designed to clean and preprocess the raw
 football transfer dataset.
