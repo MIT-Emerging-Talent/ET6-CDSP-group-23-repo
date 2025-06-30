@@ -31,4 +31,4 @@ This file contains the cleaned and preprocessed data, with only transfers from
 2018/2019 onwards, no missing values, and the 'Transfer Fee' as a numerical
 column. 📈
 
-*This dataset is saved to the /1_datasets directory. 📁
+*This output dataset is saved to the /1_datasets directory. 📁
