@@ -38,7 +38,7 @@ metrics.
 We scraped player transfer data from **2014–2023** for those who moved from
 lower-tier leagues to the **English Premier League**.
 
-- 📄 [`transfers_2014_2023.raw.csv`](./transfers_2014_2023.raw.csv)  
+- 📄 [`Transfer_Dataset.raw.csv`](./Transfer_Dataset.raw.csv)  
   *Raw list of transfers with player name, origin league, destination club,
   transfer fee, etc.*
 
@@ -47,7 +47,8 @@ lower-tier leagues to the **English Premier League**.
 We then gathered **performance metrics and attributes** of the players in our
 transfer list from Fotmob, both **before and after** the transfer (when available).
 
-- 📄 [`player_attributes_fotmob.raw.json`](./player_attributes_fotmob.raw.json)
+- 📄 [`Player_Attributes.raw.json`](./player_attributes_fotmob.raw.json)
+(will be changed to the correct file name later on)
   *Includes height, country, pass accuracy, goals, etc.*
 
 ---
