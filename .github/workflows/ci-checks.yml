@@ -25,8 +25,7 @@ jobs:
       - name: Python - Check Formatting
         uses: astral-sh/ruff-action@v1
         with:
-          args: "format --check"
-          extra_args: '--exclude=".*\\.ipynb$"'
+          args: "format --check --exclude '.*\\.ipynb$'"
 
   py_linting:
     runs-on: ubuntu-latest
@@ -37,7 +36,7 @@ jobs:
       - name: Python - Check Linting - ruff
         uses: astral-sh/ruff-action@v1
         with:
-           extra_args: '--exclude=".*\\.ipynb$"'
+          args: "check --exclude '.*\\.ipynb$'""'
 
       # passing pylint is not required - discuss errors in code review
       # adapted from https://github.com/davidslusser/actions_python_pylint/tree/main
