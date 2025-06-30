@@ -35,3 +35,49 @@ This file contains the cleaned and preprocessed data, with only transfers from
 column. 📈
 
 *This output dataset is saved to the /1_datasets directory. 📁
+
+## Player Statistics Data Preparation Script 🧹✨  
+
+This README provides a summary of the data preparation script for the
+football player statistics dataset.
+
+**Input Dataset:** `player_stats_data.raw.csv` 📥  
+This is the raw dataset containing detailed player performance statistics. ⚽  
+
+## Processing Steps 🛠️  
+
+### 1) Load Data  
+
+- Reads the `player_stats_data.raw.csv` file into a Pandas DataFrame 📂  
+
+### 2) Data Cleaning  
+
+- **Remove Duplicates:** Eliminates any duplicate player entries ✂️  
+- **Height Conversion:** Converts height from cm to meters
+(e.g., "183 cm" → 1.83) 📏  
+- **Market Value Cleaning:** Removes '€' and 'M' symbols,
+converts to numeric (millions) 💰  
+- **Percentage Columns:** Converts percentage values to decimals
+(e.g., "58.6%" → 0.586) %➗  
+- **Numeric Formatting:** Removes commas from large numbers
+(e.g., "1,000" → 1000) 🔢  
+- **Missing Values:** Fills missing numeric values with the mean 🚫  
+- **Date Standardization:** Converts 'Birth Date' to consistent
+datetime format 🗓️
+- **Preferred Foot:** Standardizes values (e.g., "left" → "Left") 👟  
+
+### 3) Data Type Fixes  
+
+- Converts all numeric columns to appropriate data types (int/float) 🔢  
+- Ensures categorical columns (like 'Country', 'Preferred foot')
+are properly typed 🏷️  
+
+**Output Dataset:** `player_stats_data_clean.csv` ✅  
+This file contains the cleaned and standardized player statistics data with:  
+
+- Consistent numeric formatting  
+- Proper data types  
+- No duplicate entries  
+- Standardized categorical values  
+
+*The cleaned dataset is ready for analysis and visualization* 📊
