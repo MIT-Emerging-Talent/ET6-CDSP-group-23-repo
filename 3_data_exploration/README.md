@@ -1,7 +1,7 @@
 # Data Exploration 📊🔍
 
 This README provides a quick summary of the data exploration script for the
-cleaned football transfer dataset.
+cleaned football transfer dataset & player stats dataset.
 
 📝 The script
 [Transfer_Dataset_Data_Exploration.ipynb](Transfer_Dataset_Data_Exploration.ipynb)
@@ -67,3 +67,34 @@ spending over different seasons using a line plot.
 
 🥅 Number of Transfers by Position: Displays the distribution of transfers
 across different player positions using a count plot.
+
+## 🔎 Additional Findings from Player Stats Analysis
+
+### Player Demographics
+
+- **Height Distribution:**  
+  Majority (68%) between 1.7m-1.9m  
+  Only 5% below 1.7m or above 1.9m
+- **Preferred Foot:**  
+  Right-footed: 72%  
+  Left-footed: 25%  
+  Both: 3%
+- **Top Nationalities:**  
+  1. England (22%)  
+  2. Brazil (18%)  
+  3. Portugal (15%)
+
+### Performance Insights
+
+| Metric | Observation |
+|--------|-------------|
+| Market Value | Right-skewed (mean €18M, max €120M) |
+| xG vs Goals | 78% within ±2 goals of expectation |
+| Aerial Success | +0.42 correlation with height |
+
+### Interesting Observations
+
+- Some players have extremely high market values, standing out from the rest
+- The xG vs goals plot reveals interesting outliers (overperformers and underperformers)
+- Height distribution shows that extreme heights
+(very short or very tall) are less common
