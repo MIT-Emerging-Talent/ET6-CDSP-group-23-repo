@@ -2,8 +2,8 @@
 
 ## Weekly Check In Summary - 09/06/2025📝
 
-**Time:** 10:00–11:00 AM ET  
-**Attendees:** All
+Time: 10:00–11:00 AM ET  
+Attendees: All
 
 ### Key Points discussed
 
@@ -28,8 +28,8 @@ and put it in the readme of the domain_study folder.✅
 
 ## Weekly Check In Summary - 14/06/2025📝
 
-**Time:** 10:00–11:00 AM ET  
-**Attendees:** Saeed, Hamid
+Time: 10:00–11:00 AM ET  
+Attendees: Saeed, Hamid
 
 ### Key-Points discussed
 

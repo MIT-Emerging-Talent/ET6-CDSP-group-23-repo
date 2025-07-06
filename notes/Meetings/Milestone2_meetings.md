@@ -2,8 +2,8 @@
 
 ## Weekly Check In Summary - 21/06/2025📝
 
-**Time:** 10:00–11:00 AM ET  
-**Attendees:** All
+Time: 10:00–11:00 AM ET  
+Attendees: All
 
 ### Key Points discussed
 
@@ -48,8 +48,8 @@ credible source for our domain and research question?
 
 ## Weekly Check In Summary - 28/06/2025📝
 
-**Time:** 10:00–11:00 AM ET  
-**Attendees:** All
+Time: 10:00–11:00 AM ET  
+Attendees: All
 
 ### Key-Points discussed
 

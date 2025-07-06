@@ -2,8 +2,8 @@
 
 ## Weekly Check-In Summary - 05/07/2025📝
 
-**Time:** 10:00–11:00 AM ET  
-**Attendees:** Tibyan, Khusro, Saeed, AbdulQadr
+Time: 10:00–11:00 AM ET  
+Attendees: Tibyan, Khusro, Saeed, AbdulQadr
 
 ### Key Points discussed
 
