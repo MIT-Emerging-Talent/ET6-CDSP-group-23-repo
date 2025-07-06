@@ -35,9 +35,7 @@ research question — the foundation of our entire project!
 Want to see how our ideas evolved? Check out our brainstorming journey in the
 [Brainstorming Document](https://docs.google.com/document/d/1GjkHdTqSOaXvgHSFjAw1yVrvjhfK8PqvNB8PJSDNICs/edit?usp=sharing),
  and explore the final output that shaped our direction in the milestone
-[Domain Study](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/0_domain_study)
-folder
-.
+[Domain Study folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/0_domain_study).
 
 ### 📌 Problem Statement
 
@@ -57,9 +55,42 @@ a more demanding league environment.
 strongly predict a player's successful performance after moving from a lower-tier
 league (e.g., Eredivisie) to a top-tier league (e.g., Premier League)?**
 
-## ⏳ The Second Half: Milestones Awaiting
-
 ### Milestone 2: Filling the Trophy Cabinet - Data Collection📊
+
+This milestone was divided into 3 stages, Data Collection, Data Preperation and
+Data Exploration.
+
+#### 1️⃣ Data Collection 📥
+
+In this stage, We gathered two essential datasets:  
+
+- A **Transfer Dataset** detailing player moves between leagues.  
+- A **Player Stats Dataset** containing individual attributes like pace, age,
+and more.  
+
+📁 All raw datasets and accompanying documentation are available here:  
+🔗 [Datasets folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/1_datasets)
+
+#### 2️⃣ Data Preparation 🛠️
+
+With the raw data in hand, it was time to clean, standardize, and get it ready
+for analysis.  
+
+- We handled missing values, renamed columns, filtered players, and merged
+relevant info.  
+- The data preparation script and a step-by-step guide are available here:  
+🔗 [Data Preparation folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/2_data_preparation)
+
+#### 3️⃣ Data Exploration 🔍
+
+Finally, we dove into the cleaned datasets to uncover patterns, distributions,
+and early insights.  
+
+- This helped us better understand the landscape of successful transfers.  
+- Our exploration methods and notebooks can be found here:  
+🔗 [Data Exploration folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/3_data_exploration)
+
+## ⏳ The Second Half: Milestones Awaiting
 
 ### Milestone 3: Breaking Down the Opposition - Data Analysis📈
 
@@ -92,8 +123,8 @@ README.md                     # You're reading it now!
 | :-------------- | :----------------------- | :------------------- |
 |  Abdul Qader Dost |   @abeddost | Real Madrid ⚪👑   |
 | Hamidullah Rajabi |  @hamid4231  |  Real Madrid ⚪👑  |
-| Khusro Sakhi| @Khusro-S   |            |
-| Saeed Emad | @Saeed-Emad  |            |
+| Khusro Sakhi| @Khusro-S   |  Real Madrid ⚪👑 |
+| Saeed Emad | @Saeed-Emad  |     FC Barcelona 🔵🔴       |
 | Tibyan Bilal |    @TibyanKhalid  | FC Barcelona 🔵🔴   |
 
 ## ⚙️ Tech Stack
