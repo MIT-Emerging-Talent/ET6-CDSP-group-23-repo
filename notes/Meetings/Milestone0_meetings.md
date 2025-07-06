@@ -2,8 +2,8 @@
 
 ## Kick-Off Meeting Summary - 31/05/2025📝
 
-**Time:** 10:00–11:00 AM ET  
-**Attendees:** All
+Time: 10:00–11:00 AM ET  
+Attendees: All
 
 ### Key Points discussed
 
