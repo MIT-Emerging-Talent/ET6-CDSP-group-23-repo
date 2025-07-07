@@ -15,7 +15,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 
-def get_player_details(player_url, desired_season="2022/2023"):
+def get_player_details(player_url, desired_season):
     chrome_options = Options()
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--no-sandbox")
@@ -45,6 +45,24 @@ def get_player_details(player_url, desired_season="2022/2023"):
                 (By.CSS_SELECTOR, 'div[class*="DetailedStatsCSS"]')
             )
         )
+
+        # Switch to "Per 90" stats view
+        try:
+            per_90_button = wait.until(
+                EC.element_to_be_clickable(
+                    (By.XPATH, '//button[contains(text(), "Per 90")]')
+                )
+            )
+            per_90_button.click()
+
+            # Wait briefly for stats to reload after switching to "Per 90"
+            wait.until(
+                EC.presence_of_element_located(
+                    (By.CSS_SELECTOR, 'div[class*="DetailedStatsCSS"]')
+                )
+            )
+        except Exception as e:
+            print("⚠ Could not switch to Per 90 stats:", e)
 
         soup = BeautifulSoup(driver.page_source, "html.parser")
 
@@ -145,16 +163,28 @@ def get_player_details(player_url, desired_season="2022/2023"):
     except Exception as e:
         print("Minutes played parsing error:", e)
 
+        # Player average rating
+    try:
+        rating_blocks = soup.select("div[class*=StatBox]")
+        for box in rating_blocks:
+            label = box.find("span", class_=lambda c: c and "StatTitle" in c)
+            value = box.find("div", class_=lambda c: c and "PlayerRatingCSS" in c)
+            if label and "rating" in label.get_text(strip=True).lower() and value:
+                player_data["Average Rating"] = value.get_text(strip=True)
+                break
+    except Exception as e:
+        print("Rating parsing error:", e)
+
     return player_data
 
 
 if __name__ == "__main__":
     player_urls = [
-        "https://www.fotmob.com/players/901495/albert-sambi-lokonga",
+        "https://www.fotmob.com/players/43248/jonny-evans",
         # Add all other player URLs here
     ]
 
-    desired_season = "2021/2022"  # or any valid season available on the page
+    desired_season = "2018/2019"  # or any valid season available on the page
 
     all_data = []
 
