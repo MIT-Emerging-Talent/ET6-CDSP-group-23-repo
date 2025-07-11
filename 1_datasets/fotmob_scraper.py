@@ -37,7 +37,8 @@ def get_player_details(player_url, desired_season):
         {
             "domain": ".fotmob.com",
             "name": "_ga_G0V1WDW9B2",
-            "value": "GS2.1.s1752246311$o1$g0$t17522463" "22$j60$l0$h1604236803",
+            "value": "GS2.1.s1752246311$o1$g0$t17522463"
+            "22$j60$l0$h1604236803",
             "path": "/",
         },
         {
@@ -67,7 +68,7 @@ def get_player_details(player_url, desired_season):
         {
             "domain": ".fotmob.com",
             "name": "FCCDCF",
-            "value":(
+            "value": (
                 "%5Bnull%2Cnull%2Cnull%2C%5B%22CQUY0gAQUY0gAEsAC"
                 "BENBzFoAP_gAEPgABpwLItD_C7dbWFDyL53absEeIhHx"
                 "_hjasQwAAbBA2AFTBqQsJQWwmE4NAyCtCACGAAAKmTBIQ"
@@ -139,7 +140,9 @@ def get_player_details(player_url, desired_season):
     try:
         # Click season dropdown
         season_button = wait.until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, 'span[class*="SeasonText"]'))
+            EC.element_to_be_clickable((
+                By.CSS_SELECTOR, 'span[class*="SeasonText"]'
+                ))
         )
         season_button.click()
 
@@ -201,8 +204,12 @@ def get_player_details(player_url, desired_season):
 
     # Player Name and Team
     try:
-        name_elem = soup.find("h1", class_=lambda c: c and "PlayerHeader__Title" in c)
-        team_elem = soup.find("a", class_=lambda c: c and "PlayerHeader__TeamLink" in c)
+        name_elem = soup.find(
+            "h1", class_=lambda c: c and "PlayerHeader__Title" in c
+            )
+        team_elem = soup.find(
+            "a", class_=lambda c: c and "PlayerHeader__TeamLink" in c
+            )
         if name_elem:
             player_data["Name"] = name_elem.text.strip()
         if team_elem:
@@ -223,7 +230,7 @@ def get_player_details(player_url, desired_season):
                 key = title_div.get_text(strip=True)
                 value = value_div.get_text(strip=True)
                 if key == player_data.get("Birth Date"):
-                    continue  # skip if it's the birth date we've already captured
+                    continue
                 player_data[key] = value
     except Exception as e:
         print("Bio parsing error:", e)
@@ -252,7 +259,9 @@ def get_player_details(player_url, desired_season):
                 current_group = element.get_text(strip=True)
 
             if "StatItemCSS" in element.get("class", [""])[0]:
-                name_elem = element.find("div", class_=lambda c: c and "StatTitle" in c)
+                name_elem = element.find(
+                    "div", class_=lambda c: c and "StatTitle" in c
+                    )
                 value_elem = element.find(
                     "div", class_=lambda c: c and "StatValue" in c
                 )
@@ -280,9 +289,11 @@ def get_player_details(player_url, desired_season):
         rating_blocks = soup.select("div[class*=StatBox]")
         for box in rating_blocks:
             label = box.find("span", class_=lambda c: c and "StatTitle" in c)
-            value = box.find("div", class_=lambda c: c and "PlayerRatingCSS" in c)
-            if label and "rating" in label.get_text(strip=True).lower() and value:
-                player_data["Average Rating"] = value.get_text(strip=True)
+            value = box.find(
+                "div", class_=lambda c: c and "PlayerRatingCSS" in c
+                )
+            text = label.get_text(strip=True).lower()
+            if "rating" in text and value:
                 break
     except Exception as e:
         print("Rating parsing error:", e)
