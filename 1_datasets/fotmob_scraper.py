@@ -22,61 +22,61 @@ def get_player_details(player_url, desired_season):
     chrome_options.add_argument("--window-size=1920x1080")
 
     driver = webdriver.Chrome(options=chrome_options)
-    
+
     # First navigate to the domain to set cookies
     driver.get("https://www.fotmob.com")
-    
+
     # Add all the cookies
     cookies = [
         {
             "domain": ".fotmob.com",
             "name": "_ga",
             "value": "GA1.1.904699775.1752246312",
-            "path": "/"
+            "path": "/",
         },
         {
             "domain": ".fotmob.com",
             "name": "_ga_G0V1WDW9B2",
             "value": "GS2.1.s1752246311$o1$g0$t1752246322$j60$l0$h1604236803",
-            "path": "/"
+            "path": "/",
         },
         {
             "domain": ".fotmob.com",
             "name": "_hjSession_2585474",
             "value": "eyJpZCI6IjU5ZDFiMmIxLTUxMWUtNDBjMi1iNjBjLTkyZDFlYmFiYTYyYSIsImMiOjE3NTIyNDYzMTE5NDksInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MX0=",
             "path": "/",
-            "secure": True
+            "secure": True,
         },
         {
             "domain": ".fotmob.com",
             "name": "_hjSessionUser_2585474",
             "value": "eyJpZCI6ImE0ZmJiMTA2LTIyOTEtNTIyMi1hMzdmLTI1YTQ2ZWVjNzFhYSIsImNyZWF0ZWQiOjE3NTIyNDYzMTE5NDgsImV4aXN0aW5nIjpmYWxzZX0=",
             "path": "/",
-            "secure": True
+            "secure": True,
         },
         {
             "domain": ".fotmob.com",
             "name": "FCCDCF",
             "value": "%5Bnull%2Cnull%2Cnull%2C%5B%22CQUY0gAQUY0gAEsACBENBzFoAP_gAEPgABpwLItD_C7dbWFDyL53absEeIhHx_hjasQwAAbBA2AFTBqQsJQWwmE4NAyCtCACGAAAKmTBIQIkCAAAAUAAIIAVIADMAAyQIBAIICBAiAEBAEBIAEACCoAgUQCIgIJEFEQAmAwEQJKAWFCAiAAAAEChKAAAABAYAYKIAAEAZAAAEQIAUCgAEQIAiAjAAAEIABAIAAgAAAQAIBEABAgAABAQQAgBAAADgoQGABAOMBABIcgEAgACCyLQfwu3W1hR8i4V2G7BDiIV8f4A2rEMAAGwQNgBUwakLCEFtJhMiRIgjAgABgAACJkQSAAKAAIAABAAQCAFSAAzAAMECAQCCBgQIAhAUBAQABAAgqAIFEAiYCCRBREAIkMBECSgFhQgAgAICBAoSgAAAAQGAGCAAABAGAAAAAiANAAAhACAIgIwAAAAAAQCBAIAAAEACARAAQIAAAQMEAAAQAAA4KEBgAACjAQACDIAAIAAgAA.cAAAD_wAAAA%22%2C%222~61.70.89.93.108.122.149.184.192.196.228.230.236.259.311.313.314.318.323.358.385.415.442.445.469.486.494.495.540.550.574.576.723.864.981.1029.1031.1033.1046.1047.1048.1051.1067.1092.1095.1097.1126.1166.1205.1276.1301.1329.1342.1365.1415.1449.1512.1514.1516.1558.1570.1577.1598.1616.1626.1651.1677.1716.1720.1725.1735.1753.1765.1782.1870.1878.1889.1917.1942.1958.1960.1967.1969.1985.1987.2010.2068.2069.2072.2074.2107.2137.2213.2219.2223.2224.2253.2299.2312.2316.2328.2331.2343.2373.2387.2411.2415.2416.2440.2501.2506.2510.2526.2531.2535.2567.2568.2571.2572.2575.2577.2624.2642.2657.2677.2686.2767.2778.2822.2869.2874.2878.2887.2898.2908.2920.2929.2963.2973.3005.3023.3100.3126.3130.3135.3155.3163.3173.3182.3219.3234.3235.3244.3253.3290.3299.3309.3324.3330.3331.3731.4131.6931.8931.9731.13731.14332.15731.27831.45931~dv.%22%2C%22A4040322-DF8E-4997-8247-8D715943DAE7%22%5D%5D",
-            "path": "/"
+            "path": "/",
         },
         {
             "domain": ".fotmob.com",
             "name": "FCNEC",
             "value": "%5B%5B%22AKsRol-JmN4QCrePYRl17nPjbMPiel8dUnhjRKmFQK-LiF-P54yr8RbIHCJ0BhJT7LkSrtFHPpGTH57FA_HZhR1UyW2vNS90k-wH6y7WqItAf4AP-73wQkXIujqR6oPClrdtbkyWcokxZJUR-Qxd79_vr79Wxm9Byw%3D%3D%22%5D%5D",
-            "path": "/"
+            "path": "/",
         },
         {
             "domain": "www.fotmob.com",
             "name": "u:location",
             "value": "%7B%22countryCode%22%3A%22DE%22%2C%22regionId%22%3A%22HE%22%2C%22ip%22%3A%22127.0.0.1%22%2C%22ccode3%22%3A%22DEU%22%2C%22ccode3NoRegion%22%3A%22DEU%22%2C%22timezone%22%3A%22Europe%2FBerlin%22%7D",
-            "path": "/"
-        }
+            "path": "/",
+        },
     ]
-    
+
     for cookie in cookies:
         driver.add_cookie(cookie)
-    
+
     # Now navigate to the actual player URL
     driver.get(player_url)
 
@@ -282,7 +282,7 @@ if __name__ == "__main__":
         "https://www.fotmob.com/players/1024169/frederik-alves-ibsen",
         "https://www.fotmob.com/players/1050158/fabio-silva",
         "https://www.fotmob.com/players/1010733/ki-jana-hoever",
-        "https://www.fotmob.com/players/1013277/toti-gomes"
+        "https://www.fotmob.com/players/1013277/toti-gomes",
     ]
 
     desired_season = "2021/2022"  # or any valid season available on the page
