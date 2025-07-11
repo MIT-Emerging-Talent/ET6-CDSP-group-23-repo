@@ -22,6 +22,62 @@ def get_player_details(player_url, desired_season):
     chrome_options.add_argument("--window-size=1920x1080")
 
     driver = webdriver.Chrome(options=chrome_options)
+    
+    # First navigate to the domain to set cookies
+    driver.get("https://www.fotmob.com")
+    
+    # Add all the cookies
+    cookies = [
+        {
+            "domain": ".fotmob.com",
+            "name": "_ga",
+            "value": "GA1.1.904699775.1752246312",
+            "path": "/"
+        },
+        {
+            "domain": ".fotmob.com",
+            "name": "_ga_G0V1WDW9B2",
+            "value": "GS2.1.s1752246311$o1$g0$t1752246322$j60$l0$h1604236803",
+            "path": "/"
+        },
+        {
+            "domain": ".fotmob.com",
+            "name": "_hjSession_2585474",
+            "value": "eyJpZCI6IjU5ZDFiMmIxLTUxMWUtNDBjMi1iNjBjLTkyZDFlYmFiYTYyYSIsImMiOjE3NTIyNDYzMTE5NDksInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MX0=",
+            "path": "/",
+            "secure": True
+        },
+        {
+            "domain": ".fotmob.com",
+            "name": "_hjSessionUser_2585474",
+            "value": "eyJpZCI6ImE0ZmJiMTA2LTIyOTEtNTIyMi1hMzdmLTI1YTQ2ZWVjNzFhYSIsImNyZWF0ZWQiOjE3NTIyNDYzMTE5NDgsImV4aXN0aW5nIjpmYWxzZX0=",
+            "path": "/",
+            "secure": True
+        },
+        {
+            "domain": ".fotmob.com",
+            "name": "FCCDCF",
+            "value": "%5Bnull%2Cnull%2Cnull%2C%5B%22CQUY0gAQUY0gAEsACBENBzFoAP_gAEPgABpwLItD_C7dbWFDyL53absEeIhHx_hjasQwAAbBA2AFTBqQsJQWwmE4NAyCtCACGAAAKmTBIQIkCAAAAUAAIIAVIADMAAyQIBAIICBAiAEBAEBIAEACCoAgUQCIgIJEFEQAmAwEQJKAWFCAiAAAAEChKAAAABAYAYKIAAEAZAAAEQIAUCgAEQIAiAjAAAEIABAIAAgAAAQAIBEABAgAABAQQAgBAAADgoQGABAOMBABIcgEAgACCyLQfwu3W1hR8i4V2G7BDiIV8f4A2rEMAAGwQNgBUwakLCEFtJhMiRIgjAgABgAACJkQSAAKAAIAABAAQCAFSAAzAAMECAQCCBgQIAhAUBAQABAAgqAIFEAiYCCRBREAIkMBECSgFhQgAgAICBAoSgAAAAQGAGCAAABAGAAAAAiANAAAhACAIgIwAAAAAAQCBAIAAAEACARAAQIAAAQMEAAAQAAA4KEBgAACjAQACDIAAIAAgAA.cAAAD_wAAAA%22%2C%222~61.70.89.93.108.122.149.184.192.196.228.230.236.259.311.313.314.318.323.358.385.415.442.445.469.486.494.495.540.550.574.576.723.864.981.1029.1031.1033.1046.1047.1048.1051.1067.1092.1095.1097.1126.1166.1205.1276.1301.1329.1342.1365.1415.1449.1512.1514.1516.1558.1570.1577.1598.1616.1626.1651.1677.1716.1720.1725.1735.1753.1765.1782.1870.1878.1889.1917.1942.1958.1960.1967.1969.1985.1987.2010.2068.2069.2072.2074.2107.2137.2213.2219.2223.2224.2253.2299.2312.2316.2328.2331.2343.2373.2387.2411.2415.2416.2440.2501.2506.2510.2526.2531.2535.2567.2568.2571.2572.2575.2577.2624.2642.2657.2677.2686.2767.2778.2822.2869.2874.2878.2887.2898.2908.2920.2929.2963.2973.3005.3023.3100.3126.3130.3135.3155.3163.3173.3182.3219.3234.3235.3244.3253.3290.3299.3309.3324.3330.3331.3731.4131.6931.8931.9731.13731.14332.15731.27831.45931~dv.%22%2C%22A4040322-DF8E-4997-8247-8D715943DAE7%22%5D%5D",
+            "path": "/"
+        },
+        {
+            "domain": ".fotmob.com",
+            "name": "FCNEC",
+            "value": "%5B%5B%22AKsRol-JmN4QCrePYRl17nPjbMPiel8dUnhjRKmFQK-LiF-P54yr8RbIHCJ0BhJT7LkSrtFHPpGTH57FA_HZhR1UyW2vNS90k-wH6y7WqItAf4AP-73wQkXIujqR6oPClrdtbkyWcokxZJUR-Qxd79_vr79Wxm9Byw%3D%3D%22%5D%5D",
+            "path": "/"
+        },
+        {
+            "domain": "www.fotmob.com",
+            "name": "u:location",
+            "value": "%7B%22countryCode%22%3A%22DE%22%2C%22regionId%22%3A%22HE%22%2C%22ip%22%3A%22127.0.0.1%22%2C%22ccode3%22%3A%22DEU%22%2C%22ccode3NoRegion%22%3A%22DEU%22%2C%22timezone%22%3A%22Europe%2FBerlin%22%7D",
+            "path": "/"
+        }
+    ]
+    
+    for cookie in cookies:
+        driver.add_cookie(cookie)
+    
+    # Now navigate to the actual player URL
     driver.get(player_url)
 
     wait = WebDriverWait(driver, 10)
@@ -180,11 +236,56 @@ def get_player_details(player_url, desired_season):
 
 if __name__ == "__main__":
     player_urls = [
-        "https://www.fotmob.com/players/43248/jonny-evans",
-        # Add all other player URLs here
+        "https://www.fotmob.com/players/299981/pablo-mari",
+        "https://www.fotmob.com/players/540088/ollie-watkins",
+        "https://www.fotmob.com/players/729731/matty-cash",
+        "https://www.fotmob.com/players/1137668/moises-caicedo",
+        "https://www.fotmob.com/players/891855/jakub-moder",
+        "https://www.fotmob.com/players/642230/andi-zeqiri",
+        "https://www.fotmob.com/players/1065940/michal-karbownik",
+        "https://www.fotmob.com/players/974618/jan-paul-van-hecke",
+        "https://www.fotmob.com/players/304455/joel-veltman",
+        "https://www.fotmob.com/players/818975/eberechi-eze",
+        "https://www.fotmob.com/players/883075/nathan-ferguson",
+        "https://www.fotmob.com/players/662936/ben-godfrey",
+        "https://www.fotmob.com/players/1104441/niels-nkounkou",
+        "https://www.fotmob.com/players/185236/joshua-king",
+        "https://www.fotmob.com/players/299572/terence-kongolo",
+        "https://www.fotmob.com/players/662428/antonee-robinson",
+        "https://www.fotmob.com/players/683402/tosin-adarabioyo",
+        "https://www.fotmob.com/players/956161/joe-gelhardt",
+        "https://www.fotmob.com/players/671529/konstantinos-tsimikas",
+        "https://www.fotmob.com/players/424609/ben-davies",
+        "https://www.fotmob.com/players/614006/ruben-dias",
+        "https://www.fotmob.com/players/835409/nahuel-lautaro-bustos",
+        "https://www.fotmob.com/players/1109171/yan-couto",
+        "https://www.fotmob.com/players/1108884/diego-rosa",
+        "https://www.fotmob.com/players/1099974/issa-kabore",
+        "https://www.fotmob.com/players/612836/donny-van-de-beek",
+        "https://www.fotmob.com/players/428672/alex-telles",
+        "https://www.fotmob.com/players/1073402/facundo-pellistri",
+        "https://www.fotmob.com/players/864983/jamal-lewis",
+        "https://www.fotmob.com/players/841150/rhian-brewster",
+        "https://www.fotmob.com/players/609504/oliver-burke",
+        "https://www.fotmob.com/players/492589/max-lowe",
+        "https://www.fotmob.com/players/789646/jayden-bogle",
+        "https://www.fotmob.com/players/1035202/ismaila-coulibaly",
+        "https://www.fotmob.com/players/938539/ibrahima-diallo",
+        "https://www.fotmob.com/players/717174/joe-rodon",
+        "https://www.fotmob.com/players/586467/karlan-grant",
+        "https://www.fotmob.com/players/522651/matheus-pereira",
+        "https://www.fotmob.com/players/760398/cedric-kipre",
+        "https://www.fotmob.com/players/31306/branislav-ivanovic",
+        "https://www.fotmob.com/players/491883/said-benrahma",
+        "https://www.fotmob.com/players/524437/tomas-soucek",
+        "https://www.fotmob.com/players/307317/vladimir-coufal",
+        "https://www.fotmob.com/players/1024169/frederik-alves-ibsen",
+        "https://www.fotmob.com/players/1050158/fabio-silva",
+        "https://www.fotmob.com/players/1010733/ki-jana-hoever",
+        "https://www.fotmob.com/players/1013277/toti-gomes"
     ]
 
-    desired_season = "2018/2019"  # or any valid season available on the page
+    desired_season = "2021/2022"  # or any valid season available on the page
 
     all_data = []
 
@@ -206,9 +307,9 @@ if __name__ == "__main__":
         # Ensure URL is first column and Birthday is early in the order
         if "URL" in keys:
             keys.remove("URL")
-        if "Birthday" in keys:
-            keys.remove("Birthday")
-        fieldnames = ["URL", "Birthday"] + keys
+        if "Birth Date" in keys:
+            keys.remove("Birth Date")
+        fieldnames = ["URL", "Birth Date"] + keys
 
         # Write CSV
         with open(
