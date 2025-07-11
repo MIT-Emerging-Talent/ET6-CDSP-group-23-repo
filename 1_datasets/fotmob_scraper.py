@@ -23,10 +23,8 @@ def get_player_details(player_url, desired_season):
 
     driver = webdriver.Chrome(options=chrome_options)
 
-    # First navigate to the domain to set cookies
     driver.get("https://www.fotmob.com")
 
-    # Add all the cookies
     cookies = [
         {
             "domain": ".fotmob.com",
@@ -37,8 +35,7 @@ def get_player_details(player_url, desired_season):
         {
             "domain": ".fotmob.com",
             "name": "_ga_G0V1WDW9B2",
-            "value": "GS2.1.s1752246311$o1$g0$t17522463"
-            "22$j60$l0$h1604236803",
+            "value": "GS2.1.s1752246311$o1$g0$t1752246322$j60$l0$h1604236803",
             "path": "/",
         },
         {
@@ -140,9 +137,7 @@ def get_player_details(player_url, desired_season):
     try:
         # Click season dropdown
         season_button = wait.until(
-            EC.element_to_be_clickable((
-                By.CSS_SELECTOR, 'span[class*="SeasonText"]'
-                ))
+            EC.element_to_be_clickable((By.CSS_SELECTOR, 'span[class*="SeasonText"]'))
         )
         season_button.click()
 
@@ -204,12 +199,8 @@ def get_player_details(player_url, desired_season):
 
     # Player Name and Team
     try:
-        name_elem = soup.find(
-            "h1", class_=lambda c: c and "PlayerHeader__Title" in c
-            )
-        team_elem = soup.find(
-            "a", class_=lambda c: c and "PlayerHeader__TeamLink" in c
-            )
+        name_elem = soup.find("h1", class_=lambda c: c and "PlayerHeader__Title" in c)
+        team_elem = soup.find("a", class_=lambda c: c and "PlayerHeader__TeamLink" in c)
         if name_elem:
             player_data["Name"] = name_elem.text.strip()
         if team_elem:
@@ -259,9 +250,7 @@ def get_player_details(player_url, desired_season):
                 current_group = element.get_text(strip=True)
 
             if "StatItemCSS" in element.get("class", [""])[0]:
-                name_elem = element.find(
-                    "div", class_=lambda c: c and "StatTitle" in c
-                    )
+                name_elem = element.find("div", class_=lambda c: c and "StatTitle" in c)
                 value_elem = element.find(
                     "div", class_=lambda c: c and "StatValue" in c
                 )
@@ -289,9 +278,7 @@ def get_player_details(player_url, desired_season):
         rating_blocks = soup.select("div[class*=StatBox]")
         for box in rating_blocks:
             label = box.find("span", class_=lambda c: c and "StatTitle" in c)
-            value = box.find(
-                "div", class_=lambda c: c and "PlayerRatingCSS" in c
-                )
+            value = box.find("div", class_=lambda c: c and "PlayerRatingCSS" in c)
             text = label.get_text(strip=True).lower()
             if "rating" in text and value:
                 break
