@@ -37,8 +37,7 @@ def get_player_details(player_url, desired_season):
         {
             "domain": ".fotmob.com",
             "name": "_ga_G0V1WDW9B2",
-            "value": "GS2.1.s1752246311$o1$g0$t17522463"
-            "22$j60$l0$h1604236803",
+            "value": "GS2.1.s1752246311$o1$g0$t17522463" "22$j60$l0$h1604236803",
             "path": "/",
         },
         {
@@ -68,7 +67,7 @@ def get_player_details(player_url, desired_season):
         {
             "domain": ".fotmob.com",
             "name": "FCCDCF",
-            "value": (
+            "value":(
                 "%5Bnull%2Cnull%2Cnull%2C%5B%22CQUY0gAQUY0gAEsAC"
                 "BENBzFoAP_gAEPgABpwLItD_C7dbWFDyL53absEeIhHx"
                 "_hjasQwAAbBA2AFTBqQsJQWwmE4NAyCtCACGAAAKmTBIQ"
@@ -128,7 +127,6 @@ def get_player_details(player_url, desired_season):
             "path": "/",
         },
     ]
-
 
     for cookie in cookies:
         driver.add_cookie(cookie)
