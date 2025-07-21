@@ -38,20 +38,47 @@ metrics.
 We scraped player transfer data from **2014–2023** for those who moved from
 lower-tier leagues to the **English Premier League**.
 
-- 📄 [`Transfer_Dataset.raw.csv`](./Transfer_Dataset.raw.csv)  
+- 📄 [`transfer_dataset.raw.csv`](../1_datasets/raw/transfer_dataset.raw.csv)  
   *Raw list of transfers with player name, origin league, destination club,
   transfer fee, etc.*
 
-### 📊 2. [Player Stats (Fotmob)](https://www.fotmob.com)
+## 📊 2. [Player Stats (Fotmob)](https://www.fotmob.com)
 
-We then gathered **performance metrics and attributes** of the players in our
-transfer list from Fotmob, both **before and after** the transfer (when available).
+We gathered **performance metrics and attributes** for each player in our
+transfer list from Fotmob, covering seasons **before and after** their transfer
+(where available).
 
-- 📄 [`Player_Attributes.raw.json`](./player_attributes_fotmob.raw.json)
-(will be changed to the correct file name later on)
-  *Includes height, country, pass accuracy, goals, etc.*
+These stats include things like appearances, goals, assists, pass completion
+rate, defensive contributions, and more.
+
+Since there was no ready-made dataset for these performance metrics, the data
+was manually scraped from Fotmob pages for each player.
+
+Additionally, we included **each player's average rating**, which was **manually
+entered** using data from [Sofascore](https://www.sofascore.com/).  
+This step was done manually because Sofascore’s HTML/CSS structure made automated
+scraping difficult and time-consuming.
+
+To speed things up, this manual data entry was divided among team members.  
+Since the dataset wasn't very large, this was a practical solution.
 
 ---
+
+## 🧪 Raw vs. Cleaned Stats: A Quick Preview
+
+Here’s a simplified comparison of raw vs. cleaned player stats data:
+
+| URL                    |Season|Average Rating|Defending - Aerial duels won|
+|------------------------------------------------------|-------------------|--------|--------------|
+| <https://www.fotmob.com/players/603537/angelino>                              | 2017/18            | 7.21 | 0.38         |
+| <https://www.fotmob.com/players/408943/takumi-minamino>                             | 2017/18             | 6.82 |       |
+
+⬇️ After cleaning:
+
+| Player Name  | Season | Average Rating | Defending - Aerial duels won |
+|--------------|------------------|------------|-------------------|
+| Angelino   | 2017/18            | 7.21       | 0.38              |
+| Takumi Minamino  | 2017/18            | 6.82       | 1.34               |
 
 ## 🧼 Dataset Usage
 
@@ -76,7 +103,23 @@ success—but this narrows down the scouting pool and adds data-driven support t
 
 - All **raw datasets** are saved as `*.raw.*` to indicate they’re **untouched
 from source**.
-- Any **cleaned or processed versions** are saved separately with **descriptive names**.
+  - For example, the raw stats files are named like this:  
+[`2019-20_Transfers_2017-18_to_2020-21_Stats.raw.csv`](
+  ../1_datasets/raw/2019-20_Transfers_2017-18_to_2020-21_Stats.raw.csv)
+This means the player was transferred in the **2019–20 season**, and the file  
+contains their stats for the **seasons from 2017–18 to 2021–22**.
+Any **cleaned or processed versions** are saved separately with **descriptive names**.
+Like this:  
+[`2019-20_Transfers_2017-18_to_2020-21_Stats.raw_cleaned_common.csv`](../1_datasets/cleaned/2019-20_Transfers_2017-18_to_2020-21_Stats.raw_cleaned_common.csv)
+
+The `common` in the filename indicates that this version only contains
+columns that were **present in all raw files across seasons**, to ensure
+consistency when merging or comparing them.  
+
+Initially, some cleaned files accidentally kept columns that were only present
+in a few raw files — causing issues during analysis.  
+
+This version avoids that by including only **mutually shared columns**.
 
 ---
 
@@ -100,7 +143,7 @@ If you’re contributing or using this repo:
 - Do **not overwrite** raw datasets.
 - When cleaning data, always save the result as a **new file** with a
 descriptive name.
-- Document new datasets here in the README as you go!
+- Document new datasets here in the README as you go.
 
 ---
 

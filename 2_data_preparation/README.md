@@ -9,7 +9,7 @@ after transfers.
 
 ## Section 1: Transfer Dataset Cleaning 📁📉
 
-This section explains the preparation process for the `Transfer_Dataset.raw.csv`
+This section explains the preparation process for the [`transfer_dataset.raw.csv`](../1_datasets/raw/transfer_dataset.raw.csv)
 file.
 
 The script [`transfer_dataset_data_preparation.ipynb`](./transfer_dataset_data_preparation.ipynb)
@@ -17,13 +17,14 @@ cleans and prepares this raw transfer dataset for analysis.
 
 ### 🔹 Input Dataset
 
-**File:** [`transfer_dataset.raw.csv`](../1_datasets/transfer_dataset.raw.csv) 📥
+**File:** [`transfer_dataset.raw.csv`](
+../1_datasets/raw/transfer_dataset.raw.csv) 📥
 This is the primary raw dataset containing information about football player transfers.⚽
 
 ### 🔧 Processing Steps
 
 1. **Load Data:**  
-   - Reads the [`transfer_dataset.raw.csv`](../1_datasets/transfer_dataset.raw.csv)
+   - Reads the [`transfer_dataset.raw.csv`](../1_datasets/raw/transfer_dataset.raw.csv)
    file into a Pandas DataFrame. 📂
 
 2. **Filter by Season:**  
@@ -39,7 +40,7 @@ This is the primary raw dataset containing information about football player tra
 
 ### ✅ Output Dataset
 
-**File:** [`transfer_dataset.cleaned.csv`](../1_datasets/transfer_dataset.cleaned.csv)
+**File:** [`transfer_dataset.cleaned.csv`](../1_datasets/cleaned/transfer_dataset.cleaned.csv)
 
 - Only includes transfers from 2018/2019 onward  
 - No missing values  
@@ -78,8 +79,8 @@ We start with:
 
 - **Multiple raw CSVs:** Stats from each season and transfer window  
   (e.g., [`2018-19_Transfers_2016-17_to_2019-20_Stats.raw.csv`](
-    ../1_datasets/2018-19_Transfers_2016-17_to_2019-20_Stats.raw.csv))  
-- **One cleaned transfer dataset:** [`transfer_dataset.cleaned.csv`](../1_datasets/transfer_dataset.cleaned.csv)
+    ../1_datasets/raw/2018-19_Transfers_2016-17_to_2019-20_Stats.raw.csv))  
+- **One cleaned transfer dataset:** [`transfer_dataset.cleaned.csv`](../1_datasets/cleaned/transfer_dataset.cleaned.csv)
 (with player positions)
 
 ---
@@ -121,19 +122,16 @@ Each cleaned season file is saved as `*_cleaned_common.csv` ✅
 - For each player:
   - Split data into **before** and **after** their transfer year 🗓️  
   - Average stats across each period ➕➗  
-- Saved as:
-  - [`pre_transfer_dataset.csv`](../1_datasets/pre_transfer_dataset.csv) ⬅️  
-  - [`post_transfer_dataset.csv`](../1_datasets/post_transfer_dataset.csv) ➡️
 
 #### 🔹 Step 4: Merge with Position Info
 
-- Load position data from [`transfer_dataset.cleaned.csv`](../1_datasets/transfer_dataset.cleaned.csv)
+- Load position data from [`transfer_dataset.cleaned.csv`](../1_datasets/cleaned/transfer_dataset.cleaned.csv)
 - Map detailed positions into general roles:
   - "Attack", "Midfield", "Defense" 🥅⚽🛡️  
 - Merge position info using "Player Name" column 🔗  
 
 - **Handle Missing Position Values:**  
-  After comparing the `player stats` with the [`cleaned transfer dataset`](../1_datasets/transfer_dataset.cleaned.csv),
+  After comparing the `player stats` with the [`cleaned transfer dataset`](../1_datasets/cleaned/transfer_dataset.cleaned.csv),
   which contains detailed position information, and assigning positions accordingly,
   some players still had **missing values** in the position column.
 
@@ -158,9 +156,12 @@ Each cleaned season file is saved as `*_cleaned_common.csv` ✅
   Each missing entry was manually reviewed and assigned a general role  
   ("Attack", "Midfield", or "Defense") to ensure complete and  
   consistent datasets for analysis. 📝
+
 - Saved as:
-  - [`pre_transfer_with_general_positions.csv`](../1_datasets/pre_transfer_with_general_positions.csv)
-  - [`post_transfer_with_general_positions.csv`](../1_datasets/post_transfer_with_general_positions.csv)
+  - [`pre_transfer_cleaned.csv`](
+    ../1_datasets//cleaned/pre_transfer_cleaned.csv) ⬅️
+  - [`post_transfer_cleaned.csv`](
+    ../1_datasets/cleaned/post_transfer_cleaned.csv) ➡️
 
 ---
 
@@ -168,15 +169,12 @@ Each cleaned season file is saved as `*_cleaned_common.csv` ✅
 
 You will get the following cleaned datasets:
 
-- `*_cleaned_common.csv` – Cleaned season stats with shared columns ✨  
-- [`pre_transfer_dataset.csv`](../1_datasets/pre_transfer_dataset.csv)
+- `*_cleaned_common.csv` – Cleaned season stats with shared columns ✨
+  - For example:  [`2018-19_Transfers_2016-17_to_2019-20_Stats.raw_cleaned_common.csv`](../1_datasets/cleaned/2018-19_Transfers_2016-17_to_2019-20_Stats.raw_cleaned_common.csv)
+- [`pre_transfer_cleaned.csv`](../1_datasets/cleaned/pre_transfer_cleaned.csv)
 – Stats before player transfers ⬅️  
-- [`post_transfer_dataset.csv`](../1_datasets/post_transfer_dataset.csv)
+- [`post_transfer_cleaned.csv`](../1_datasets/cleaned/post_transfer_cleaned.csv)
 – Stats after player transfers ➡️  
-- [`pre_transfer_with_general_positions.csv`](../1_datasets/pre_transfer_with_general_positions.csv)
-– Includes position info 📍  
-- [`post_transfer_with_general_positions.csv`](../1_datasets/post_transfer_with_general_positions.csv)
-– Includes position info 📍
 
 These final datasets are ready for visualizations, modeling, and statistical
 analysis on how transfers affect player performance 🚀📈
