@@ -1,83 +1,182 @@
-# Data Cleaning & Preparation Script 🧹✨
+# Data Cleaning & Preparation Scripts ⚽📊🧹✨
 
-This README provides a quick summary of the data Preparation script for the
-("Transfer_Dataset.raw.csv") dataset.
+This README describes the two key scripts used to clean and prepare raw football
+datasets for analysis. The goal is to transform messy, unstructured data into
+well organized, clean formats ready for comparing player performance before and
+after transfers.
 
-The script [Transfer_Dataset_Data_Preparation.ipynb](Transfer_Dataset_Data_Preparation.ipynb)
-is designed to clean and preprocess the raw
-football transfer dataset.
+---
 
-**Input Dataset:** Transfer_Dataset.raw.csv 📥
-This is the primary raw dataset containing information about football player
-transfers.⚽
+## Section 1: Transfer Dataset Cleaning 📁📉
 
-**Processing Steps 🛠️**
-The script performs the following data cleaning and preparation steps:
+This section explains the preparation process for the `Transfer_Dataset.raw.csv`
+file.
 
-1) Load Data: Reads the Transfer_Dataset.raw.csv file into a Pandas DataFrame. 📂
+The script [`transfer_dataset_data_preparation.ipynb`](./transfer_dataset_data_preparation.ipynb)
+cleans and prepares this raw transfer dataset for analysis.
 
-2) Filter by Season: Excludes all transfer entries that occurred before the
-'2018/2019' season. 🗓️
+### 🔹 Input Dataset
 
-3) Handle Missing Null Values 🗑️
+**File:** [`transfer_dataset.raw.csv`](../1_datasets/transfer_dataset.raw.csv) 📥
+This is the primary raw dataset containing information about football player transfers.⚽
 
-4) Identifies and replaces string representations of missing values (e.g., "-")
-with NaN (Not a Number). 🚫
+### 🔧 Processing Steps
 
-5) Removes any rows that contain NaN values across all columns. ✂️
+1. **Load Data:**  
+   - Reads the [`transfer_dataset.raw.csv`](../1_datasets/transfer_dataset.raw.csv)
+   file into a Pandas DataFrame. 📂
 
-6) Fix Data Types: Converts the 'Transfer Fee' column from an object (string) type
-to a numerical (float64) type, coercing any non-numeric values to NaN 🔢
+2. **Filter by Season:**  
+   - Excludes all transfer entries that occurred before the '2018/2019' season. 🗓️
 
-**Output Dataset:** Transfer_Dataset.cleaned.csv ✅
-This file contains the cleaned and preprocessed data, with only transfers from
-2018/2019 onwards, no missing values, and the 'Transfer Fee' as a numerical
-column. 📈
+3. **Handle Null Values:**  
+   - Replaces string placeholders like "-" with `NaN`. 🚫  
+   - Removes rows with missing values. ✂️
 
-*This output dataset is saved to the /1_datasets directory. 📁
+4. **Fix Data Types:**  
+   - Converts 'Transfer Fee' from string to numeric (float64). 🔢  
+   - Non-numeric values are coerced to NaN.
 
-## Player Statistics Data Preparation Script 🧹✨  
+### ✅ Output Dataset
 
-This README provides a summary of the data preparation script for the
-football player statistics dataset.
+**File:** [`transfer_dataset.cleaned.csv`](../1_datasets/transfer_dataset.cleaned.csv)
 
-**Input Dataset:** `player_stats_data.raw.csv` 📥  
-This is the raw dataset containing detailed player performance statistics. ⚽  
+- Only includes transfers from 2018/2019 onward  
+- No missing values  
+- 'Transfer Fee' is a numeric column  
+- Saved to the `/1_datasets` directory 📁
 
-## Processing Steps 🛠️  
+---
 
-### 1) Load Data  
+## Section 2: Player Statistics Dataset Cleaning 📊📂
 
-- Reads the `player_stats_data.raw.csv` file into a Pandas DataFrame 📂  
+This sections explains the process of cleaning and preparing raw football player
+statistics to make them ready for analysis, especially for understanding how
+performance changes before and after transfers.
 
-### 2) Data Cleaning  
+---
 
-- **Remove Duplicates:** Eliminates any duplicate player entries ✂️  
-- **Height Conversion:** Converts height from cm to meters
-(e.g., "183 cm" → 1.83) 📏  
-- **Market Value Cleaning:** Removes '€' and 'M' symbols,
-converts to numeric (millions) 💰  
-- **Percentage Columns:** Converts percentage values to decimals
-(e.g., "58.6%" → 0.586) %➗  
-- **Numeric Formatting:** Removes commas from large numbers
-(e.g., "1,000" → 1000) 🔢  
-- **Missing Values:** Fills missing numeric values with the mean 🚫  
-- **Date Standardization:** Converts 'Birth Date' to consistent
-datetime format 🗓️
-- **Preferred Foot:** Standardizes values (e.g., "left" → "Left") 👟  
+### 🎯 Context
 
-### 3) Data Type Fixes  
+Imagine having player performance stats across. This section describes how we
+convert such raw
+stats into clean data for **pre-transfer** and **post-transfer** analysis.
 
-- Converts all numeric columns to appropriate data types (int/float) 🔢  
-- Ensures categorical columns (like 'Country', 'Preferred foot')
-are properly typed 🏷️  
+---
 
-**Output Dataset:** `player_stats_data_clean.csv` ✅  
-This file contains the cleaned and standardized player statistics data with:  
+### Why Clean the Data❓
 
-- Consistent numeric formatting  
-- Proper data types  
-- No duplicate entries  
-- Standardized categorical values  
+Raw stats often contain missing values, bad formatting, and inconsistencies.
+Cleaning helps avoid analysis errors and ensures all data is reliable and
+structured.
 
-*The cleaned dataset is ready for analysis and visualization* 📊
+---
+
+### 📁 Input Data
+
+We start with:
+
+- **Multiple raw CSVs:** Stats from each season and transfer window  
+  (e.g., [`2018-19_Transfers_2016-17_to_2019-20_Stats.raw.csv`](
+    ../1_datasets/2018-19_Transfers_2016-17_to_2019-20_Stats.raw.csv))  
+- **One cleaned transfer dataset:** [`transfer_dataset.cleaned.csv`](../1_datasets/transfer_dataset.cleaned.csv)
+(with player positions)
+
+---
+
+### 🧼 Step-by-Step Cleaning Process
+
+#### 🔹 Step 1: Clean Individual Season Files
+
+- **Drop % Columns:** Remove columns that contain '%' (e.g., "Pass Completion %")
+- **Extract Player Names:** From embedded URLs to a clear "Player Name" column
+- **Fix Numbers:**  
+  - Remove commas from values (e.g., "1,000" → 1000)  
+  - Convert string-based numerics to numeric types (int and/or float) 🔢
+- **Fill Missing Values:**  
+  - **Filling with 0:** For certain statistics like `"Penalties conceded"`,  
+    `"Penalties awarded"`, and `"Red cards"`, a missing value typically means  
+    the event **did not occur** for that player. So, it makes logical sense to  
+    fill in a zero (0️⃣) to represent absence of the event.  
+    For example, if a player has no recorded red cards, it's usually because  
+    they didn’t receive any, not because data is unavailable.
+  
+  - **Filling with Median:** For other numerical columns like `"Passes completed"`,
+    `"Tackles"`, or `"Interceptions"`, a missing value could mean incomplete  
+    data due to data entry errors, scraping issues, or lack of tracking.  
+    Instead of dropping these rows, we impute with the **median** of the column.
+    The median is less affected by outliers and gives a balanced replacement  
+    that won't skew analysis as much as a mean would. 📊
+
+Each cleaned season file is saved as `*_cleaned_common.csv` ✅
+
+#### 🔹 Step 2: Find Common Columns Across Seasons
+
+- Identify columns that appear in **every** cleaned season file 🧩  
+- Filter all files to keep only these shared columns  
+- Re-save them for consistency across datasets 💾
+
+#### 🔹 Step 3: Create "Before" and "After" Datasets
+
+- For each player:
+  - Split data into **before** and **after** their transfer year 🗓️  
+  - Average stats across each period ➕➗  
+- Saved as:
+  - [`pre_transfer_dataset.csv`](../1_datasets/pre_transfer_dataset.csv) ⬅️  
+  - [`post_transfer_dataset.csv`](../1_datasets/post_transfer_dataset.csv) ➡️
+
+#### 🔹 Step 4: Merge with Position Info
+
+- Load position data from [`transfer_dataset.cleaned.csv`](../1_datasets/transfer_dataset.cleaned.csv)
+- Map detailed positions into general roles:
+  - "Attack", "Midfield", "Defense" 🥅⚽🛡️  
+- Merge position info using "Player Name" column 🔗  
+
+- **Handle Missing Position Values:**  
+  After comparing the `player stats` with the [`cleaned transfer dataset`](../1_datasets/transfer_dataset.cleaned.csv),
+  which contains detailed position information, and assigning positions accordingly,
+  some players still had **missing values** in the position column.
+
+  This occurred mainly due **mismatches in player names** between the two  
+  datasets. These mismatches were caused by:
+
+- Differences in name formatting (e.g., "é" vs "e", or inclusion of middle names)
+- Cleaning steps that stripped or altered characters  
+- Inconsistencies in how names were scraped from different sources
+
+  As a result, some names in the player stats didn’t match exactly with the names
+  in the transfer dataset, causing the empty values for those cells.
+
+  **Why we fixed them manually:**  
+
+- The dataset was relatively small  
+- Due to limited time, implementing and testing a fuzzy matching solution or  
+    rewriting the cleaning logic to handle all name variations would have taken
+    longer  
+- Manual review and entry was faster and ensured no critical data was lost
+
+  Each missing entry was manually reviewed and assigned a general role  
+  ("Attack", "Midfield", or "Defense") to ensure complete and  
+  consistent datasets for analysis. 📝
+- Saved as:
+  - [`pre_transfer_with_general_positions.csv`](../1_datasets/pre_transfer_with_general_positions.csv)
+  - [`post_transfer_with_general_positions.csv`](../1_datasets/post_transfer_with_general_positions.csv)
+
+---
+
+### 🎉 Final Outputs
+
+You will get the following cleaned datasets:
+
+- `*_cleaned_common.csv` – Cleaned season stats with shared columns ✨  
+- [`pre_transfer_dataset.csv`](../1_datasets/pre_transfer_dataset.csv)
+– Stats before player transfers ⬅️  
+- [`post_transfer_dataset.csv`](../1_datasets/post_transfer_dataset.csv)
+– Stats after player transfers ➡️  
+- [`pre_transfer_with_general_positions.csv`](../1_datasets/pre_transfer_with_general_positions.csv)
+– Includes position info 📍  
+- [`post_transfer_with_general_positions.csv`](../1_datasets/post_transfer_with_general_positions.csv)
+– Includes position info 📍
+
+These final datasets are ready for visualizations, modeling, and statistical
+analysis on how transfers affect player performance 🚀📈
