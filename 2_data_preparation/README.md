@@ -45,7 +45,7 @@ This is the primary raw dataset containing information about football player tra
 - Only includes transfers from 2018/2019 onward  
 - No missing values  
 - 'Transfer Fee' is a numeric column  
-- Saved to the `/1_datasets` directory 📁
+- Saved to the [`/1_datasets/cleaned`](../1_datasets/cleaned/) directory 📁
 
 ---
 
@@ -80,8 +80,6 @@ We start with:
 - **Multiple raw CSVs:** Stats from each season and transfer window  
   (e.g., [`2018-19_Transfers_2016-17_to_2019-20_Stats.raw.csv`](
     ../1_datasets/raw/2018-19_Transfers_2016-17_to_2019-20_Stats.raw.csv))  
-- **One cleaned transfer dataset:** [`2018-19_Transfers_2016-17_to_2019-20_Stats.raw_cleaned_common.csv`](../1_datasets/cleaned/2018-19_Transfers_2016-17_to_2019-20_Stats.raw_cleaned_common.csv)
-(with player positions)
 
 ---
 
@@ -109,7 +107,7 @@ We start with:
     The median is less affected by outliers and gives a balanced replacement  
     that won't skew analysis as much as a mean would. 📊
 
-Each cleaned season file is saved as `*_cleaned_common.csv` ✅
+Each cleaned season file so far is saved in memory
 
 #### 🔹 Step 2: Find Common Columns Across Seasons
 
@@ -158,10 +156,10 @@ Each cleaned season file is saved as `*_cleaned_common.csv` ✅
   consistent datasets for analysis. 📝
 
 - Saved as:
-  - [`pre_transfer_cleaned.csv`](
-    ../1_datasets//cleaned/pre_transfer_cleaned.csv) ⬅️
-  - [`post_transfer_cleaned.csv`](
-    ../1_datasets/cleaned/post_transfer_cleaned.csv) ➡️
+  - [`pre_transfer.cleaned.csv`](
+    ../1_datasets/cleaned/pre_transfer.cleaned.csv) ⬅️
+  - [`post_transfer.cleaned.csv`](
+    ../1_datasets/cleaned/post_transfer.cleaned.csv) ➡️
 
 ---
 
@@ -169,8 +167,6 @@ Each cleaned season file is saved as `*_cleaned_common.csv` ✅
 
 You will get the following cleaned datasets:
 
-- `*_cleaned_common.csv` – Cleaned season stats with shared columns ✨
-  - For example:  [`2018-19_Transfers_2016-17_to_2019-20_Stats.raw_cleaned_common.csv`](../1_datasets/cleaned/2018-19_Transfers_2016-17_to_2019-20_Stats.raw_cleaned_common.csv)
 - [`pre_transfer_cleaned.csv`](../1_datasets/cleaned/pre_transfer_cleaned.csv)
 – Stats before player transfers ⬅️  
 - [`post_transfer_cleaned.csv`](../1_datasets/cleaned/post_transfer_cleaned.csv)

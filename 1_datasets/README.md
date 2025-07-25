@@ -99,6 +99,52 @@ success—but this narrows down the scouting pool and adds data-driven support t
 
 ---
 
+## 🧹 Cleaned & Aggregated Datasets
+
+After the raw stats files are cleaned and aligned across seasons, we create
+**two final performance datasets**:
+
+- **[`pre_transfer.cleaned.csv`](../1_datasets/cleaned/pre_transfer.cleaned.csv)**  
+  Average performance metrics **before** a player's transfer to the Premier
+  League.
+
+- **[`post_transfer.cleaned.csv`](../1_datasets/cleaned/post_transfer.cleaned.csv)**  
+  Average performance metrics **after** the transfer.
+
+- **[`transfer_dataset.cleaned.csv`](../1_datasets/cleaned/transfer_dataset.cleaned.csv)**  
+   Contains the cleaned metadata of player transfers, including name, position,
+   transfer fee, and club info.
+
+These datasets are saved in the [`/1_datasets/cleaned/`](../1_datasets/cleaned/)
+folder and are used to:
+
+- Analyze how individual metrics change after a player transfers
+- Label players as **"successful"** or **"unsuccessful"**
+- Train machine learning models to predict future transfer success
+
+Each record in these (`pre/post transfer`) datasets represents **a unique player**,
+with numeric
+performance averages computed over multiple seasons (`pre/post transfer`) where data
+is available.
+
+---
+
+### 📊 Sample of Pre-Transfer Dataset
+
+Below is a preview of the aggregated player statistics **before** their transfers.
+This data is grouped by player name and averaged across all pre-transfer seasons.
+
+| Player Name| Average Rating | Defending - Aerial duels won | Defending - Blocked|
+|-----------------|-------------|---------|-------|
+| Aaron Lennon      | 6.58        | 0.2    | 0.26  |
+| Aaron Mooy   | 6.99        | 0.77    | 0.49   |
+| Adam Armstrong   | 7        | 0.32    | 1.09 |
+
+> ℹ️ The **post-transfer dataset** follows a **similar format**, with player  
+> statistics aggregated for seasons **after** the transfer.
+
+---
+
 ## 🧾 File Naming Convention
 
 - All **raw datasets** are saved as `*.raw.*` to indicate they’re **untouched
@@ -108,18 +154,9 @@ from source**.
   ../1_datasets/raw/2019-20_Transfers_2017-18_to_2020-21_Stats.raw.csv)
 This means the player was transferred in the **2019–20 season**, and the file  
 contains their stats for the **seasons from 2017–18 to 2021–22**.
-Any **cleaned or processed versions** are saved separately with **descriptive names**.
+- Any **cleaned or processed versions** are saved separately with **descriptive names**.
 Like this:  
-[`2019-20_Transfers_2017-18_to_2020-21_Stats.raw_cleaned_common.csv`](../1_datasets/cleaned/2019-20_Transfers_2017-18_to_2020-21_Stats.raw_cleaned_common.csv)
-
-The `common` in the filename indicates that this version only contains
-columns that were **present in all raw files across seasons**, to ensure
-consistency when merging or comparing them.  
-
-Initially, some cleaned files accidentally kept columns that were only present
-in a few raw files — causing issues during analysis.  
-
-This version avoids that by including only **mutually shared columns**.
+[`post_transfer.cleaned.csv`](../1_datasets/cleaned/post_transfer.cleaned.csv)
 
 ---
 
