@@ -51,9 +51,9 @@ a more demanding league environment.
 
 ### 🎯 Our Million-Dollar Actionable Research Question
 
-**Which individual attributes—such as height, pace, age, or previous league experience—most
-strongly predict a player's successful performance after moving from a lower-tier
-league (e.g., Eredivisie) to a top-tier league (e.g., Premier League)?**
+**Which performance metrics from players in lower-tier football leagues are the
+strongest predictors of success in the Premier League, and how do these key
+indicators vary by player position (defenders, midfielders, and attackers)?**
 
 ### Milestone 2: Filling the Trophy Cabinet - Data Collection📊
 
@@ -78,7 +78,8 @@ for analysis.
 
 - We handled missing values, renamed columns, filtered players, and merged
 relevant info.  
-- The data preparation script and a step-by-step guide are available here:  
+
+The data preparation script and a step-by-step guide are available here:  
 🔗 [Data Preparation folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/2_data_preparation)
 
 #### 3️⃣ Data Exploration 🔍
@@ -87,12 +88,56 @@ Finally, we dove into the cleaned datasets to uncover patterns, distributions,
 and early insights.  
 
 - This helped us better understand the landscape of successful transfers.  
-- Our exploration methods and notebooks can be found here:  
+
+Our exploration methods and notebooks can be found here:  
 🔗 [Data Exploration folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/3_data_exploration)
 
-## ⏳ The Second Half: Milestones Awaiting
-
 ### Milestone 3: Breaking Down the Opposition - Data Analysis📈
+
+In this milestone, we tackled our core research question by building predictive
+models to identify which player attributes from lower-tier leagues are the
+strongest indicators of success in the Premier League.
+
+We analyzed 149 player transfers into the Premier League, building Random Forest
+models separately for attackers, midfielders, and defenders to reflect the unique
+traits needed for success
+in each role.
+
+### 🧠 Modeling Approach
+
+We defined “success” as:
+
+Average Rating ≥ 6.7
+
+1000+ Minutes Played over 2 Seasons
+
+### 📊 Key Findings
+
+- Attackers were the most predictable, with **83%** accuracy. Interestingly, chances
+created and accurate crosses were more important than goals scored.
+
+- Midfielders and Defenders were less predictable, both around **62%** accuracy.
+
+- For midfielders, ball touches and pass success were key.
+
+- For defenders, surprisingly, goals scored and shots taken were more predictive
+than traditional defensive metrics, highlighting a shift towards more versatile,
+attack-minded players.
+
+Overall, our findings suggest that modern football values technical versatility
+across all positions.
+
+For a deeper dive into the technical details of our models, check out the
+🔗 [Technical Report](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/4_data_analysis/technical_report.md)
+and the 🔗 [rf_models_summary.md](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/4_data_analysis/rf_models_summary.md).
+
+You can also find a more detailed non-technical overview of our findings in
+🔗 [Non Technical Report](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/4_data_analysis/non_technical_report.md).
+
+For a deep dive into the full analysis and visuals, check the
+🔗 [Data Analysis folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/data_analysis_doc/4_data_analysis).
+
+## ⏳ The Second Half: Milestones Awaiting
 
 ### Milestone 4: Celebrating the Win - Communicating Results📣
 
