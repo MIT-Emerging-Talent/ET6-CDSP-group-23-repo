@@ -104,6 +104,8 @@ success—but this narrows down the scouting pool and adds data-driven support t
 After the raw stats files are cleaned and aligned across seasons, we create
 **two final performance datasets**:
 
+<!-- markdownlint-disable MD013 -->
+
 - **[`pre_transfer.cleaned.csv`](../1_datasets/cleaned/pre_transfer.cleaned.csv)**  
   Average performance metrics **before** a player's transfer to the Premier
   League.
@@ -111,7 +113,10 @@ After the raw stats files are cleaned and aligned across seasons, we create
 - **[`post_transfer.cleaned.csv`](../1_datasets/cleaned/post_transfer.cleaned.csv)**  
   Average performance metrics **after** the transfer.
 
-- **[`transfer_dataset.cleaned.csv`](../1_datasets/cleaned/transfer_dataset.cleaned.csv)**  
+- **[`transfer_dataset.cleaned.csv`](../1_datasets/cleaned/transfer_dataset.cleaned.csv)**
+
+<!-- markdownlint-enable MD013 -->
+
    Contains the cleaned metadata of player transfers, including name, position,
    transfer fee, and club info.
 
