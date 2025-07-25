@@ -79,9 +79,9 @@ Tested on the remaining 30%, using Accuracy and ROC-AUC.
 
 | Position    | Accuracy | ROC-AUC |
 |-------------|----------|---------|
-| Attackers   | 73%      | 0.83    |
+| Attackers   | 83%      | 0.83    |
 | Midfielders | 62%      | 0.62    |
-| Defenders   | 59%      | 0.62    |
+| Defenders   | 62%      | 0.62    |
 
 > **ROC-AUC** = Model’s ability to rank players from most to least likely  
 > to succeed.  

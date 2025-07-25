@@ -85,21 +85,27 @@ To evaluate performance, we used **Confusion Matrices** — visuals that show
  correct vs. incorrect predictions.
 
 - Confusion Matrix - Attackers
-![alt text](confusion_attackers.png)
 
-*Correct predictions fall on the diagonal. Green shows successful predictions,
- while red shows incorrect classifications.*
+![alt text](<Confusion Matrix-Attackers.png>)
+
+*This matrix shows model performance on attackers. It correctly classified 11 out
+of 15 players. Most errors occurred in predicting successful players.*
 
 - Confusion Matrix - Midfielders
-![alt text](confusion_midfielders.png)
-*Model struggled slightly more with midfielders. Still, most predictions
-fall along the correct diagonal.*
+
+![alt text](<Confusion Matrix-Midfielders.png>)
+
+*This matrix shows predictions for midfielders. The model correctly predicted 8
+out of 13 cases. Errors were more balanced between false positives and false
+negatives, indicating greater uncertainty.*
 
 - Confusion Matrix - Defenders
-![alt text](confusion_defenders.png)
+  
+![alt text](<Confusion Matrix-Defenders.png>)
 
-*The model had lower confidence for defenders, indicating more unpredictable
- factors at play.*
+*This matrix shows predictions for defenders. The model correctly predicted
+10 out of 17 cases. Errors were more frequent, suggesting defenders are harder
+to classify based on available statistics.*
 
 ---
 
