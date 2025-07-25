@@ -5,7 +5,7 @@
 **Which performance metrics from players in lower-tier football
 leagues are the strongest predictors of success in the Premier
 League, and how do these key indicators vary by player position
-(defenders, midfielders, and forwards)?**
+(defenders, midfielders, and attackers)?**
 
 ---
 
