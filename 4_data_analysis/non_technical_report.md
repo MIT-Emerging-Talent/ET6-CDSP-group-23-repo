@@ -18,7 +18,14 @@ We analyzed **149 players** who transferred from lower-tier leagues into the
 
 - **Attackers** (50 players; 15 in test set) — forwards and wingers  
 - **Midfielders** (43 players; 13 in test set) — central and wide midfielders  
-- **Defenders** (56 players; 17 in test set) — center-backs and fullbacks  
+- **Defenders** (56 players; 17 in test set) — center-backs and fullbacks
+- split into three groups:
+
+| Position     | Total Players | Test Players | Main Role         |
+|--------------|----------------|---------------|-------------------|
+| Attackers    | 50             | 15            | Score goals       |
+| Midfielders  | 43             | 13            | Control the game  |
+| Defenders    | 56             | 17            | Prevent goals     |
 
 We used 70% of our data to train the model and 30% to test it.
 
@@ -45,13 +52,13 @@ For each group, we built models to identify which stats from
 
 ### 2. Surprising Stats That Matter Most
 
-**🔴 For Attackers:**
+**⚡ For Attackers:**
 
 - ✅ *Most important:* Chances created (not goals!)  
 - ✅ *Also important:* Accurate crosses  
 - ❗ *Surprise:* Goal-scoring mattered less than creativity
 
-**🟡 For Midfielders:**
+**🔴 For Midfielders:**
 
 - ✅ *Most important:* Ball touches  
 - ✅ *Also important:* Pass success  
@@ -74,8 +81,6 @@ Our findings suggest that:
 
 Modern football increasingly values **multi-role players** who contribute
  across the pitch.
-
----
 
 ---
 
@@ -114,6 +119,18 @@ to classify based on available statistics.*
 - Attacking success is **statistically predictable**
 - **Positional differences matter** — different roles need different attributes
 - **Creativity and involvement** are better indicators than traditional metrics
+
+---
+
+## 🎯 Our Level of Certainty
+
+| Confidence Level | Findings                                                   |
+|------------------|------------------------------------------------------------|
+| Moderate         | Position differences exist; attacker patterns are somewhat |
+|                  | reliable                                                   |
+| Low-to-Moderate  | Midfielder/defender stats (~60% accuracy, small samples)   |
+| High Uncertainty | Accuracy %, generalizability to other leagues or time      |
+|                  | periods is uncertain                                       |
 
 ---
 
