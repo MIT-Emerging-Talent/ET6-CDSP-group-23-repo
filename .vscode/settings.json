@@ -125,5 +125,8 @@
   },
   "githubPullRequests.ignoredPullRequestBranches": [
     "main"
+  ],
+  "cSpell.words": [
+    "Eredivisie"
   ]
 }
