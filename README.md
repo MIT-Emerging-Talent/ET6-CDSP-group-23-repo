@@ -137,9 +137,21 @@ You can also find a more detailed non-technical overview of our findings in
 For a deep dive into the full analysis and visuals, check the
 🔗 [Data Analysis folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/data_analysis_doc/4_data_analysis).
 
-## ⏳ The Second Half: Milestones Awaiting
-
 ### Milestone 4: Celebrating the Win - Communicating Results📣
+
+With our key insights in hand, it was time to share them with the world!
+
+In this milestone, we identified and analyzed our target audience, from football
+fans to journalists and scouting agents, and explored the best ways to reach them.
+
+Our findings and approach are detailed in the
+🔗 [Target Audience Document](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/data_analysis_doc/4_data_analysis).
+
+To make our work accessible to everyone, we also built a website that brings our
+results to life in a clear and engaging way. Check it out here: 🔗[Data Strikers
+website!](https://datastrikers.netlify.app/).
+
+## ⏳ The Second Half: Milestones Awaiting
 
 ### Milestone 5: The Grand Final - Final Presentation🏆
 
