@@ -2,11 +2,11 @@
 
 Welcome to **Data Strikers** , a collaborative research initiative that explores
 football through the lens of data science. Our mission is to build reproducible,
-insight‑rich projects that illuminate how the beautiful game really works—from
+insight‑rich projects that illuminate how this beautiful game really works, from
 the factors behind an individual’s scoring prowess to the subtle dynamics of
 match officiating and injury risk. This repository collects our code, data
 workflows, and findings so that students, practitioners, and fans can learn
-from—and build upon—our work.
+from, and build upon, our work.
 
 ---
 
@@ -21,7 +21,7 @@ was all about getting to know each other, agreeing on our collaboration and
 communication rules, and defining our project's initial constraints.
 
 *Check out our [collaboration](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/collaboration)
-framework*
+framework*.
 
 ### Milestone 1: Scouting for Gold - Problem Identification 🔍
 
@@ -45,7 +45,7 @@ top-tier leagues. However, there's a significant degree of uncertainty regarding
 whether these players will successfully adapt and perform at the higher level.
 This lack of predictive insight can lead to suboptimal transfer decisions, wasted
 resources, and underperforming squads. Our project seeks to address this challenge
-by providing a data-driven framework to identify the key individual attributes
+by providing a data-driven framework to identify the key performance metrics
 that are most indicative of a player's successful adaptation and performance in
 a more demanding league environment.
 
@@ -69,7 +69,7 @@ In this stage, We gathered two essential datasets:
 and more.  
 
 📁 All raw datasets and accompanying documentation are available here:  
-🔗 [Datasets folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/1_datasets)
+🔗 [Datasets folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/1_datasets).
 
 #### 2️⃣ Data Preparation 🛠️
 
@@ -80,7 +80,7 @@ for analysis.
 relevant info.  
 
 The data preparation script and a step-by-step guide are available here:  
-🔗 [Data Preparation folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/2_data_preparation)
+🔗 [Data Preparation folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/2_data_preparation).
 
 #### 3️⃣ Data Exploration 🔍
 
@@ -90,7 +90,7 @@ and early insights.
 - This helped us better understand the landscape of successful transfers.  
 
 Our exploration methods and notebooks can be found here:  
-🔗 [Data Exploration folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/3_data_exploration)
+🔗 [Data Exploration folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/main/3_data_exploration).
 
 ### Milestone 3: Breaking Down the Opposition - Data Analysis📈
 
@@ -149,7 +149,7 @@ Our findings and approach are detailed in the
 
 To make our work accessible to everyone, we also built a website that brings our
 results to life in a clear and engaging way. Check it out here: 🔗[Data Strikers
-website!](https://datastrikers.netlify.app/).
+website!](https://datastrikers.netlify.app/)
 
 ## ⏳ The Second Half: Milestones Awaiting
 
