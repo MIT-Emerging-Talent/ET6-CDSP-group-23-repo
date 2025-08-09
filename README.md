@@ -166,11 +166,11 @@ README.md                     # You're reading it now!
 
 | Team Member   | GitHub    |Fav Football team  |
 | :-------------- | :----------------------- | :------------------- |
-|  Abdul Qader Dost |   @abeddost | Real Madrid ⚪👑   |
-| Hamidullah Rajabi |  @hamid4231  |  Real Madrid ⚪👑  |
-| Khusro Sakhi| @Khusro-S   |  Real Madrid ⚪👑 |
-| Saeed Emad | @Saeed-Emad  |     FC Barcelona 🔵🔴       |
-| Tibyan Bilal |    @TibyanKhalid  | FC Barcelona 🔵🔴   |
+|  Abdul Qader Dost |  [@abeddost](https://github.com/abeddost) | Real Madrid ⚪👑   |
+| Hamidullah Rajabi | [@hamid4231](https://github.com/hamid4231)   |  Real Madrid ⚪👑  |
+| Khusro Sakhi| [@Khusro-S](https://github.com/Khusro-S)  |  Real Madrid ⚪👑 |
+| Saeed Emad |[@Saeed-Emad](https://github.com/Saeed-Emad)   |     FC Barcelona 🔵🔴       |
+| Tibyan Bilal | [@TibyanKhalid](https://github.com/TibyanKhalid)    | FC Barcelona 🔵🔴   |
 
 ## ⚙️ Tech Stack
 
