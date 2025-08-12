@@ -137,9 +137,19 @@ You can also find a more detailed non-technical overview of our findings in
 For a deep dive into the full analysis and visuals, check the
 🔗 [Data Analysis folder](https://github.com/MIT-Emerging-Talent/ET6-CDSP-group-23-repo/tree/data_analysis_doc/4_data_analysis).
 
-## ⏳ The Second Half: Milestones Awaiting
-
 ### Milestone 4: Celebrating the Win - Communicating Results📣
+
+With our key insights in hand, it was time to share them with the world!
+In this milestone, we identified and analyzed our target audience, from football
+fans to journalists and scouting agents, and explored the best ways to reach them.
+Our findings and approach are detailed in this
+🔗 Target Audience Document.
+
+To make our work accessible to everyone, we also built a website that brings our
+results to life in a clear and engaging way. Check it out here: 🔗[Data Strikers
+website!](<https://datastrikers.netlify.app/>)
+
+## ⏳ The Second Half: Milestones Awaiting
 
 ### Milestone 5: The Grand Final - Final Presentation🏆
 
@@ -166,11 +176,12 @@ README.md                     # You're reading it now!
 
 | Team Member   | GitHub    |Fav Football team  |
 | :-------------- | :----------------------- | :------------------- |
-|  Abdul Qader Dost |   @abeddost | Real Madrid ⚪👑   |
-| Hamidullah Rajabi |  @hamid4231  |  Real Madrid ⚪👑  |
-| Khusro Sakhi| @Khusro-S   |  Real Madrid ⚪👑 |
-| Saeed Emad | @Saeed-Emad  |     FC Barcelona 🔵🔴       |
-| Tibyan Bilal |    @TibyanKhalid  | FC Barcelona 🔵🔴   |
+|  Abdul Qader Dost |  [@abeddost](https://github.com/abeddost) | Real Madrid ⚪👑   |
+| Hamidullah Rajabi | [@hamid4231](https://github.com/hamid4231)   |  Real Madrid ⚪👑  |
+| Khusro Sakhi| [@Khusro-S](https://github.com/Khusro-S)  |  Real Madrid ⚪👑 |
+| Saeed Emad |[@Saeed-Emad](https://github.com/Saeed-Emad)   |     FC Barcelona 🔵🔴       |
+| Tibyan Bilal | [@TibyanKhalid](https://github.com/TibyanKhalid)    | FC Barcelona 🔵🔴   |
+| Arthur Dorvil | [@Mr-Glucose](https://github.com/Mr-Glucose)    |    |
 
 ## ⚙️ Tech Stack
 
